@@ -37,16 +37,14 @@ var AppViewModel = function () {
     } else {
         defaultIcon = makeMarkerIcon('FF0000');
         highlightedIcon = makeMarkerIcon('00FFF0');
-        var infoWindow = new google.maps.InfoWindow();
+        var infoWindow = new google.maps.InfoWindow({
+            maxWidth: 200
+        });
         google.maps.event.addDomListener(window, 'load', initialize);
     }
     self.restaurantList = ko.observableArray([]);
     self.query = ko.observable('');
     self.queryResult = ko.observable('');
-
-    self.search = function () {
-        //To prevent reload of page on click search button
-    };
 
 
     //List of restaurant's after filter based on query added in search
@@ -70,7 +68,7 @@ var AppViewModel = function () {
             }
         }
         else {
-            self.queryResult("No restaurant's Available");
+            self.queryResult("No restaurants Available");
         }
         return results;
     });
@@ -114,7 +112,7 @@ var AppViewModel = function () {
                 }
             });
         }).fail(function (response, status, error) {
-            $('#query-summary').text('restaurant\'s could not load...');
+            $('#query-summary').text('restaurans could not load...');
         });
     }
 };

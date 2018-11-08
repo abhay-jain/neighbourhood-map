@@ -19,11 +19,7 @@
         <!--Search Box-->
         <header>
             <h1>Restaurants in Delhi</h1>
-            <form class="form-inline" id="form-search" data-bind="submit: search">
-                <input type="text" class="form-control" data-bind="value: query" id="query-input" placeholder="Search"
-                       autofocus>
-                <button type="submit" id="submit-button" class="btn btn-outline-danger">Search</button>
-            </form>
+                <input class="search" data-bind="textInput: query, valueUpdate: 'afterkeydown'" placeholder="Search Locations..." id="query-input">
             <!--Number of results from the search filter-->
             <p id="query-summary" data-bind="text: queryResult">
             </p>
@@ -43,6 +39,7 @@
 </div>
     <!--Loading Scripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script src="lib/knockout-3.4.2.js"></script>
 <script src="js/app.js"></script>
